@@ -45,39 +45,39 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
   for (int i = 0; i < 9; i++){
-    int filas[10] = {0};
+    int f[10] = {0};
     for (int j = 0; j < 9; j++)
     {
-      if (filas[n->sudo[i][j]])
+      if (f[n->sudo[i][j]])
         return 0;
 
-      if (filas[n->sudo[i][j]] == 0 && n->sudo[i][j] != 0)
-        filas[n->sudo[i][j]] = 1;
+      if (f[n->sudo[i][j]] == 0 && n->sudo[i][j] != 0)
+        f[n->sudo[i][j]] = 1;
     }
   }
 
   for (int i = 0; i < 9; i++){ 
-    int columnas[10] = {0};
+    int colum[10] = {0};
     for (int j = 0; j < 9; j++)
     {
-      if (columnas[n->sudo[j][i]] != 0)
+      if (colum[n->sudo[j][i]] != 0)
         return 0;
 
-      if (columnas[n->sudo[j][i]] == 0 && n->sudo[j][i] != 0)
-        columnas[n->sudo[j][i]] = 1;
+      if (colum[n->sudo[j][i]] == 0 && n->sudo[j][i] != 0)
+        colum[n->sudo[j][i]] = 1;
     }
   }
-  for (int sub = 0; sub < 9; sub++)
+  for (int aux = 0; aux < 9; aux++)
   {
-    int submatriz[10] = {0};
-    int k=sub,p; 
+    int auxmatriz[10] = {0};
+    int k=aux,p; 
     for(p=0;p<9;p++){
       int i=3*(k/3) + (p/3) ;
       int j=3*(k%3) + (p%3) ;
-      if (submatriz[n->sudo[i][j]] != 0)
+      if (auxmatriz[n->sudo[i][j]] != 0)
         return 0;
-      if(!submatriz[n->sudo[i][j]] && n->sudo[i][j])
-        submatriz[n->sudo[i][j]] = 1;
+      if(!auxmatriz[n->sudo[i][j]] && n->sudo[i][j])
+        auxmatriz[n->sudo[i][j]] = 1;
     }
   }
   return 1;
