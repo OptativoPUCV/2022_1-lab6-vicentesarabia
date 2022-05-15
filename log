@@ -262,3 +262,23 @@ Sun May 15 20:35:29 UTC 2022:
  tests:  3|4
 total_score: 20/70
 2745062
+Sun May 15 20:42:32 UTC 2022: 
+ sudoku.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:91:9: error: unused variable ‘flag_vacia’ [-Werror=unused-variable]
+     int flag_vacia = 0;
+         ^~~~~~~~~~
+sudoku.c:90:20: error: unused variable ‘columnavacia’ [-Werror=unused-variable]
+     int filavacia, columnavacia;
+                    ^~~~~~~~~~~~
+sudoku.c:90:9: error: unused variable ‘filavacia’ [-Werror=unused-variable]
+     int filavacia, columnavacia;
+         ^~~~~~~~~
+sudoku.c:89:11: error: unused variable ‘nodoAux’ [-Werror=unused-variable]
+     Node* nodoAux;
+           ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+6042670
