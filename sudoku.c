@@ -43,18 +43,10 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
-  for (int i = 0; i < 9; i++){
-    int filas[10] = {0};
-    for (int j = 0; j < 9; j++)
-    {
-      if (filas[n->sudo[i][j]])
-        return 0;
-
-      if (filas[n->sudo[i][j]] == 0 && n->sudo[i][j] != 0)
-        filas[n->sudo[i][j]] = 1;
-    }
-  }
+int is_valid(Node* n)
+{
+  return 1;
+}
 
 
 List* get_adj_nodes(Node* n){
