@@ -89,7 +89,30 @@ List* get_adj_nodes(Node* n){
     Node* nodoAux;
     int filavacia, columnavacia;
     int flag_vacia = 0; 
-
+    for (int i = 0; i < 9; i++)
+    {
+      for (int j = 0; j < 9; j++)
+      {
+        if(n->sudo[i][j] == 0)
+        {
+          filavacia = i;
+          columnavacia = j;
+          flag_vacia = 1;
+          break;
+        }
+      }
+      if(flag_vacia == 1)
+        break;
+    }
+    if(flag_vacia == 0)
+        return list;
+    for (int i = 1; i < 10; i++)
+    {
+      nodoAux = copy(n);
+      nodoAux->sudo[filavacia][columnavacia] = i;
+      if(is_valid(nodoAux))
+        pushBack(list, nodoAux);
+    }
     return list;
 }
 

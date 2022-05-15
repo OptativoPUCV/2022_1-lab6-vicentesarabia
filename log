@@ -282,3 +282,9 @@ sudoku.c:89:11: error: unused variable ‘nodoAux’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 6042670
+Sun May 15 20:43:37 UTC 2022: 
+ sudoku.c | 25 ++++++++++++++++++++++++-
+ 1 file changed, 24 insertions(+), 1 deletion(-)
+ tests:  6|2
+total_score: 45/70
+56aeb47
